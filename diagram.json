@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Mohamad Rizal",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -57, "left": -29.4, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -72.8,
+      "left": -247.38,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -13.2, "left": 551, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 82.8, "left": 551, "attrs": { "color": "green" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 188.4,
+      "left": 560.6,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": 256, "left": -4, "attrs": { "pins": "i2c" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 3.95,
+      "left": 403.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 99.95,
+      "left": 422.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 195.95,
+      "left": 441.6,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pir1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "pir1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pir1:OUT", "uno:2", "green", [ "v0" ] ],
+    [ "led1:A", "uno:3", "green", [ "v0" ] ],
+    [ "led1:C", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "uno:GND.3", "green", [ "v0" ] ],
+    [ "led2:A", "uno:4", "green", [ "v0" ] ],
+    [ "led2:C", "r2:2", "green", [ "v0" ] ],
+    [ "r2:1", "uno:GND.2", "green", [ "v0" ] ],
+    [ "led3:A", "uno:5", "green", [ "v0" ] ],
+    [ "led3:C", "r3:2", "green", [ "v0" ] ],
+    [ "r3:1", "uno:GND.2", "green", [ "v0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
